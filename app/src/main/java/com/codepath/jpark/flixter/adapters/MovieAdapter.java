@@ -14,7 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.codepath.jpark.flixter.R;
+import com.codepath.jpark.flixter.models.GlideApp;
 import com.codepath.jpark.flixter.models.Movie;
+
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
 
 import java.util.List;
 
@@ -79,8 +83,26 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 imageUrl = movie.getPosterPath();
             }
 
-
-            Glide.with(context).load(imageUrl).into(ivPoster);
+            GlideApp.with(context)
+                    .load(imageUrl)
+                    .placeholder(R.drawable.placeholder)
+                    .error(R.drawable.error)
+                    .into(ivPoster);
         }
+
+//        public void placeHolder(){
+//
+//            GlideApp.with(context)
+//                    .load("http://via.placeholder.com/300.png")
+//                    .placeholder(R.drawable.placeholder)
+//                    .error(R.drawable.error)
+//                    .into(ivPoster);
+//        }
     }
+//
+//    @GlideModule
+//    public final class MyAppGlideModule extends AppGlideModule {
+//        // leave empty for now
+//
+//    }
 }
