@@ -90,19 +90,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                     .into(ivPoster);
         }
 
-//        public void placeHolder(){
-//
-//            GlideApp.with(context)
-//                    .load("http://via.placeholder.com/300.png")
-//                    .placeholder(R.drawable.placeholder)
-//                    .error(R.drawable.error)
-//                    .into(ivPoster);
-//        }
     }
-//
-//    @GlideModule
-//    public final class MyAppGlideModule extends AppGlideModule {
-//        // leave empty for now
-//
-//    }
+
 }
